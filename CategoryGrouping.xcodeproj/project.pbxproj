@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24C3760E5B77F19CC74A9501 /* Pods_CategoryGrouping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7C630B84030C41FBA333EF /* Pods_CategoryGrouping.framework */; };
 		4710F9921C5AF02E00DDE2A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710F9911C5AF02E00DDE2A1 /* AppDelegate.swift */; };
 		4710F9941C5AF02E00DDE2A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710F9931C5AF02E00DDE2A1 /* ViewController.swift */; };
 		4710F9971C5AF02E00DDE2A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4710F9951C5AF02E00DDE2A1 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E7C630B84030C41FBA333EF /* Pods_CategoryGrouping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CategoryGrouping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4552ED35643101E62BAF909E /* Pods-CategoryGrouping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryGrouping.release.xcconfig"; path = "Pods/Target Support Files/Pods-CategoryGrouping/Pods-CategoryGrouping.release.xcconfig"; sourceTree = "<group>"; };
 		4710F98E1C5AF02E00DDE2A1 /* CategoryGrouping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CategoryGrouping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4710F9911C5AF02E00DDE2A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4710F9931C5AF02E00DDE2A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		4710F9AD1C5AF02F00DDE2A1 /* CategoryGroupingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CategoryGroupingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4710F9B11C5AF02F00DDE2A1 /* CategoryGroupingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGroupingUITests.swift; sourceTree = "<group>"; };
 		4710F9B31C5AF02F00DDE2A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AB3B951F8082793A452BBD8 /* Pods-CategoryGrouping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryGrouping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CategoryGrouping/Pods-CategoryGrouping.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24C3760E5B77F19CC74A9501 /* Pods_CategoryGrouping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		249FF2B841A4E176FB41D098 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AB3B951F8082793A452BBD8 /* Pods-CategoryGrouping.debug.xcconfig */,
+				4552ED35643101E62BAF909E /* Pods-CategoryGrouping.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4710F9851C5AF02E00DDE2A1 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +95,8 @@
 				4710F9A51C5AF02F00DDE2A1 /* CategoryGroupingTests */,
 				4710F9B01C5AF02F00DDE2A1 /* CategoryGroupingUITests */,
 				4710F98F1C5AF02E00DDE2A1 /* Products */,
+				249FF2B841A4E176FB41D098 /* Pods */,
+				BC633ED1B87D8539C2FC8B37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +141,14 @@
 			path = CategoryGroupingUITests;
 			sourceTree = "<group>";
 		};
+		BC633ED1B87D8539C2FC8B37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E7C630B84030C41FBA333EF /* Pods_CategoryGrouping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4710F9B61C5AF02F00DDE2A1 /* Build configuration list for PBXNativeTarget "CategoryGrouping" */;
 			buildPhases = (
+				0F6979FAB6C4646EA3190F72 /* Check Pods Manifest.lock */,
 				4710F98A1C5AF02E00DDE2A1 /* Sources */,
 				4710F98B1C5AF02E00DDE2A1 /* Frameworks */,
 				4710F98C1C5AF02E00DDE2A1 /* Resources */,
+				C6FAD9E7FC62AF9D11066A5B /* Embed Pods Frameworks */,
+				AE8ABE99EF74BDDB389222B5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +276,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F6979FAB6C4646EA3190F72 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE8ABE99EF74BDDB389222B5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CategoryGrouping/Pods-CategoryGrouping-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FAD9E7FC62AF9D11066A5B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CategoryGrouping/Pods-CategoryGrouping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4710F98A1C5AF02E00DDE2A1 /* Sources */ = {
@@ -396,6 +471,7 @@
 		};
 		4710F9B71C5AF02F00DDE2A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AB3B951F8082793A452BBD8 /* Pods-CategoryGrouping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CategoryGrouping/Info.plist;
@@ -407,6 +483,7 @@
 		};
 		4710F9B81C5AF02F00DDE2A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4552ED35643101E62BAF909E /* Pods-CategoryGrouping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CategoryGrouping/Info.plist;
@@ -483,6 +560,7 @@
 				4710F9B81C5AF02F00DDE2A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4710F9B91C5AF02F00DDE2A1 /* Build configuration list for PBXNativeTarget "CategoryGroupingTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +569,7 @@
 				4710F9BB1C5AF02F00DDE2A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4710F9BC1C5AF02F00DDE2A1 /* Build configuration list for PBXNativeTarget "CategoryGroupingUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +578,7 @@
 				4710F9BE1C5AF02F00DDE2A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
