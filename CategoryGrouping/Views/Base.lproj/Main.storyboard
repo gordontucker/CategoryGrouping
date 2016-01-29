@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="112" id="MBN-8U-LKy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" rowHeight="112" id="MBN-8U-LKy" customClass="CategoryTableViewCell" customModule="CategoryGrouping" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MBN-8U-LKy" id="gMi-9l-qeH">
@@ -66,14 +66,28 @@
                                                         <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemCell" id="NJj-HI-F4l">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="itemCell" id="NJj-HI-F4l" customClass="ItemCollectionViewCell" customModule="CategoryGrouping" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="0.0" width="54" height="74"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54" height="74"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b5o-q6-u8P">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="54" height="74"/>
+                                                                    </imageView>
+                                                                </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
+                                                            <constraints>
+                                                                <constraint firstItem="b5o-q6-u8P" firstAttribute="leading" secondItem="NJj-HI-F4l" secondAttribute="leading" id="12S-z7-ju0"/>
+                                                                <constraint firstAttribute="trailing" secondItem="b5o-q6-u8P" secondAttribute="trailing" id="8dQ-zK-NJo"/>
+                                                                <constraint firstItem="b5o-q6-u8P" firstAttribute="top" secondItem="NJj-HI-F4l" secondAttribute="top" id="LhQ-YJ-qoR"/>
+                                                                <constraint firstAttribute="bottom" secondItem="b5o-q6-u8P" secondAttribute="bottom" id="jcn-RW-vgj"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="b5o-q6-u8P" id="hQV-9N-C4g"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -88,6 +102,10 @@
                                                 <constraint firstItem="EsF-Wu-Vib" firstAttribute="top" secondItem="Xvd-29-7de" secondAttribute="bottom" constant="8" id="wbr-3M-4Jz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryNameLabel" destination="Xvd-29-7de" id="nMa-XF-5gY"/>
+                                            <outlet property="collectionView" destination="EsF-Wu-Vib" id="WRM-4G-sUe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

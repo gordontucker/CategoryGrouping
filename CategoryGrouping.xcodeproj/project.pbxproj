@@ -17,6 +17,8 @@
 		4710F9CB1C5B05FF00DDE2A1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710F9C91C5B05FF00DDE2A1 /* CategoryTableViewCell.swift */; };
 		4710F9CC1C5B05FF00DDE2A1 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710F9CA1C5B05FF00DDE2A1 /* ItemCollectionViewCell.swift */; };
 		4710F9CE1C5B065800DDE2A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710F9CD1C5B065800DDE2A1 /* ViewController.swift */; };
+		4710F9D01C5B098000DDE2A1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710F9CF1C5B098000DDE2A1 /* Item.swift */; };
+		4710F9D21C5B0C2700DDE2A1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4710F9D11C5B0C2700DDE2A1 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		4710F9C91C5B05FF00DDE2A1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		4710F9CA1C5B05FF00DDE2A1 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		4710F9CD1C5B065800DDE2A1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4710F9CF1C5B098000DDE2A1 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		4710F9D11C5B0C2700DDE2A1 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		6AB3B951F8082793A452BBD8 /* Pods-CategoryGrouping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CategoryGrouping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CategoryGrouping/Pods-CategoryGrouping.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +170,8 @@
 		4710F9C21C5B04D600DDE2A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4710F9CF1C5B098000DDE2A1 /* Item.swift */,
+				4710F9D11C5B0C2700DDE2A1 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,10 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4710F9D01C5B098000DDE2A1 /* Item.swift in Sources */,
 				4710F9CC1C5B05FF00DDE2A1 /* ItemCollectionViewCell.swift in Sources */,
 				4710F9921C5AF02E00DDE2A1 /* AppDelegate.swift in Sources */,
 				4710F9CE1C5B065800DDE2A1 /* ViewController.swift in Sources */,
 				4710F9CB1C5B05FF00DDE2A1 /* CategoryTableViewCell.swift in Sources */,
+				4710F9D21C5B0C2700DDE2A1 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
