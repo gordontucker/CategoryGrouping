@@ -14,19 +14,17 @@ class Category: NSObject {
     var items:[Item] = []
     
     /* Generate a random set of 15 items in a category */
-    class func generateCategory(name:String, categoryLoaded:((category:Category) -> ())) {
+    class func generateCategory(categoryIndex:Int, name:String) -> Category {
         
         let category:Category = Category()
         category.name = name
-        for i in 0...15 {
-            Item.generateItem("Item Number \(i)") { (item) -> () in
-                category.items.append(item)
-                print("\(category.items.count)")
-                if (category.items.count == 15) {
-                    // We finished loading all items! Hurray!
-                    categoryLoaded(category: category)
-                }
-            }
+        for i in 1...15 {
+            let item = Item()
+            item.name = "Item\(categoryIndex)-\(i)"
+            item.id = Int(arc4random_uniform(UInt32.max))
+            
+            category.items.append(item)
         }
+        return category
     }
 }
