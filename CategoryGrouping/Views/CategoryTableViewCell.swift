@@ -19,7 +19,10 @@ class CategoryTableViewCell: UITableViewCell {
             return self.collectionView.contentOffset.x
         }
         set {
-            self.collectionView.contentOffset.x = newValue
+            // We don't set the .x directly so we can prevent any current scrolling (otherwise a new cell coming on the screen might be animating already if we left in a animated state...)
+            var contentOffset = self.collectionView.contentOffset
+            contentOffset.x = newValue
+            self.collectionView.setContentOffset(contentOffset, animated: false)
         }
     }
     
@@ -37,7 +40,7 @@ class CategoryTableViewCell: UITableViewCell {
     func setCollectionViewDataSourceDelegate
         <D: protocol<UICollectionViewDataSource, UICollectionViewDelegate>>
         (dataSourceDelegate: D, forRow row: Int) {
-            
+            // We have hidden the collectionView from our controller so our code is less coupled.
             self.collectionView.delegate = dataSourceDelegate
             self.collectionView.dataSource = dataSourceDelegate
             self.collectionView.tag = row

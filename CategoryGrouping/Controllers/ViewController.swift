@@ -12,6 +12,7 @@ import Alamofire
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     var categories:[Category] = []
     var offsets:[CGFloat] = []
@@ -19,11 +20,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.logoImageView.image = self.logoImageView.image?.imageWithRenderingMode(.AlwaysTemplate)
+        self.logoImageView.tintColor = UIColor.whiteColor()
+        
         // We need to make some fake categories
         var categories:[Category] = []
+        let categoryNames:[String] = ["NEW DEALS", "POPULAR", "ENDING SOON", "ACCESSORIES", "BABY", "CLOTHING", "HOME DECOR", "KIDS", "MISC"]
         var offsets:[CGFloat] = []
-        for i in 1...15 {
-            let category:Category = Category.generateCategory(i, name: "Category \(i)")
+        for i in 0...8 {
+            let category:Category = Category.generateCategory(i + 1, name: categoryNames[i])
             categories.append(category)
             offsets.append(CGFloat(0))
         }
@@ -35,6 +40,10 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }
 
@@ -52,14 +61,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         let category:Category = self.categories[indexPath.row]
         
+        // Rows on the table only do two things. They set the category name and they initialize the collection view's delegate/datasource
         cell.categoryNameLabel.text = category.name
-        
         cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+        
+        // When you load a cell, revert it to the last scroll position for this row
         cell.collectionViewOffset = self.offsets[indexPath.row] ?? 0
     }
 
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         guard let cell:CategoryTableViewCell = cell as? CategoryTableViewCell else { return }
+        
+        // This cell just scrolled out of view, so get the position its collection view is scrolled to so we can return to that later
         self.offsets[indexPath.row] = cell.collectionViewOffset
     }
     
@@ -92,11 +105,20 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         // Load the image on the item here. If nil, it will blank the image until loaded later
         cell.imageView.image = item.image
         
+        cell.discountPriceLabel.text = item.discountPrice
+        cell.originalPriceLabel.text = item.originalPrice
+        
         cell.tag = item.id
+        
+        // If we don't have an image, load it in the background here
         if item.image == nil {
-            Alamofire.request(.GET, "http://dummyimage.com/224x300&text=\(item.name)").response() {
+            // For now, we are using an image generator so we can see images
+            let url = "http://lorempixel.com/220/320/fashion/\(item.name)/?unique=\(item.id)"
+            //let url = "https://jane.com/cdn.jane/img/deals/\(item.id)_thumb.jpg"
+            Alamofire.request(.GET, url).response() {
                 [weak cell] (_, _, data, _)  in
                 
+                // Update the item's image.
                 let image = UIImage(data: data!)
                 item.image = image
                 
@@ -114,6 +136,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let category:Category = self.categories[collectionView.tag]
         let item = category.items[indexPath.item]
         
-        print("Selected '\(item.name)' on collection \(collectionView.tag)")
+        // Tell the user they tapped this item!
+        let alert = UIAlertController(title: "Item Selected", message: "You just selected \(item.name)", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

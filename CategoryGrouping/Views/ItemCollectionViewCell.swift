@@ -9,6 +9,8 @@
 import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
-    
+     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var discountPriceLabel: UILabel!
+    @IBOutlet weak var originalPriceLabel: UILabel!
 }

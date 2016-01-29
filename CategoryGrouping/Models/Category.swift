@@ -21,7 +21,14 @@ class Category: NSObject {
         for i in 1...15 {
             let item = Item()
             item.name = "Item\(categoryIndex)-\(i)"
+            // The id here is used to only load images once per item
             item.id = Int(arc4random_uniform(UInt32.max))
+            
+            // Generate random prices (discount is always less than original)
+            let discountPrice = arc4random_uniform(30) + 1
+            let originalPrice = arc4random_uniform(60) + discountPrice
+            item.discountPrice = "\(discountPrice).99"
+            item.originalPrice = "\(originalPrice).99"
             
             category.items.append(item)
         }
