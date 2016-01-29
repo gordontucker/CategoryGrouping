@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import TouchVisualizer
 
 class ViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Visualizer.start()
         
         self.logoImageView.image = self.logoImageView.image?.imageWithRenderingMode(.AlwaysTemplate)
         self.logoImageView.tintColor = UIColor.whiteColor()
@@ -113,7 +116,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         // If we don't have an image, load it in the background here
         if item.image == nil {
             // For now, we are using an image generator so we can see images
-            let url = "http://lorempixel.com/220/320/fashion/\(item.name)/?unique=\(item.id)"
+            let url = "http://lorempixel.com/220/320/?unique=\(item.id)"
             //let url = "https://jane.com/cdn.jane/img/deals/\(item.id)_thumb.jpg"
             Alamofire.request(.GET, url).response() {
                 [weak cell] (_, _, data, _)  in

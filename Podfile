@@ -4,4 +4,5 @@ use_frameworks!
 
 target "CategoryGrouping" do
     pod 'Alamofire'
+    pod 'TouchVisualizer'
 end
